@@ -45,7 +45,7 @@ export default {
           variables: { input: this.state }
         });
         this.suggestions = res.data.data.getSuggestions;
-        this.isOpen = true;
+        this.isOpen = true; 
       }
       else{
         this.suggestions = [];
@@ -96,6 +96,7 @@ export default {
 
 .suggestion-block:hover {
   background-color: skyblue;
+  color: white;
   cursor: pointer;
 }
 </style>
