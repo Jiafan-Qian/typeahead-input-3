@@ -32,9 +32,7 @@ var schema = buildSchema(`
 var root = {
   //filter all the suggestions that have the user input content
   getSuggestions: ({ userInput }) => {
-    return States.find().then(states => {
-      return states.filter(i => i.name.toLowerCase().includes(userInput.toLowerCase()));
-    });
+    return States.find({'name': new RegExp(userInput, 'gi')})
   }
 };
 
